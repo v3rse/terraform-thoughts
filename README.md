@@ -10,6 +10,8 @@
   - `terraform validate`: validate file
   - `terraform state list`: list states for manual state management
   - `terraform show`: show current state of deployed resource as stated in `terraform.tfstate`
+  - `terraform apply [-var region=us-west-2 |-var-file-"secret.tfvars"]` : input variables can be passed using the var flag or variable files a lot like .env files or as envs of the form `TF_VAR_<variable-name>`
+  - `terraform output ip`: query the output variable of configuration file.
 
 ### Gotchas
 - Applying a config to using the wrong ids eg. the AMI ids in the wrong region would work but not create the instance at all...i.e. it fails quietly

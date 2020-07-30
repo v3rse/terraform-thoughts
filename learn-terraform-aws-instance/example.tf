@@ -1,9 +1,16 @@
+# input variable
+variable "region" {
+  # default value makes it optionsl
+  default = "us-east-1"
+}
+
 # converts api calls to different cloud providers
 # there can be many of this
 provider "aws" {
   # aws config profile name from config file (no hard coded creds)
   profile = "default"
-  region  = "us-east-1"
+  # using the variable here
+  region = var.region
 }
 
 # S3
@@ -48,4 +55,9 @@ resource "aws_eip" "ip" {
   # using a created resource's details in another (resource_type.name.attribute)
   # associates eip instance with ec2 to assign it an ip
   instance = aws_instance.example.id
+}
+
+# output variable
+output "ip" {
+  value = aws_eip.ip.public_ip
 }
