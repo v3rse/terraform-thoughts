@@ -14,6 +14,11 @@
 ### Gotchas
 - Applying a config to using the wrong ids eg. the AMI ids in the wrong region would work but not create the instance at all...i.e. it fails quietly
 - AWS regions can be a bitch!
+- Make sure your S3 bucket name is unique across all AWS or else you get:
+```
+Error creating S3 bucket: AuthorizationHeaderMalformed: The authorization header is malformed; the region 'us$
+east-1' is wrong; expecting 'us-west-2'
+```
 
 ### Best practices
 - `.tf` files should be committed to vcs
