@@ -19,7 +19,9 @@
 Error creating S3 bucket: AuthorizationHeaderMalformed: The authorization header is malformed; the region 'us$
 east-1' is wrong; expecting 'us-west-2'
 ```
+- Provisioners only run when a resource is created/updated/destroyed. If there's nothing to change on the resource they don't run.
 
 ### Best practices
 - `.tf` files should be committed to vcs
 - `.tfstate` files shouldn't be committed to vcs. They should only be shared with trusted be people who are to manage the resources defined. __For production it should be stored remotely using Terraform Cloud [TFC](https://learn.hashicorp.com/terraform/tfc/tfc_migration)__
+- provisioners are only meant to be bootstrappers.

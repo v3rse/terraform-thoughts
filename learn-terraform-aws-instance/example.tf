@@ -23,6 +23,10 @@ resource "aws_instance" "example" {
   ami = "ami-b374d5a5"
   # EC2 instance type
   instance_type = "t2.micro"
+  # allows for scripting locally or remotely after the resource is created
+  provisioner "local-exec" {
+    command = "echo ${aws_instance.example.public_ip} > ip_address.txt"
+  }
 
   # explicit dependency
   depends_on = [aws_s3_bucket.example_s3]
