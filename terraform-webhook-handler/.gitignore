@@ -2,3 +2,4 @@ dist
 *.tfstate.*
 node_modules
 .terraform
+*.tfvars

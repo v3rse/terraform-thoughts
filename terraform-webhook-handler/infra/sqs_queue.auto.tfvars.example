@@ -1,0 +1,2 @@
+# This is fifo queue and should end in .fifo
+webhook_event_queue_name = "webhook-event-queue.fifo"
