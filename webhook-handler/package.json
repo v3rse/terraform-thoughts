@@ -4,8 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "deploy": "npm run build && terraform apply",
-    "build": "npm run lint && cd src  && zip -r ../webhook-handler.zip .",
+    "infra:deploy": "npm run build && cd infra && terraform apply",
+    "infra:destroy": "cd infra && terraform destroy",
+    "infra:init": "cd infra && terraform init",
+    "build": "npm run lint && cd src  && zip -r ../dist/webhook-handler.zip .",
     "lint": "standard src/**/*.js",
     "lint:fix": "npm run lint -- --fix"
   },
