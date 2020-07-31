@@ -1,0 +1,17 @@
+{
+  "name": "webhook-handler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "npm run build && terraform apply",
+    "build": "npm run lint && cd src  && zip -r ../webhook-handler.zip .",
+    "lint": "standard src/**/*.js",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "14.3.4"
+  }
+}

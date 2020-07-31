@@ -22,6 +22,8 @@ Error creating S3 bucket: AuthorizationHeaderMalformed: The authorization header
 east-1' is wrong; expecting 'us-west-2'
 ```
 - Provisioners only run when a resource is created/updated/destroyed. If there's nothing to change on the resource they don't run.
+- Remove spaces before policy json brackets to avoid errors
+- Function will return `null` if function is not async or doesn't use `callback`
 
 ### Best practices
 - `.tf` files should be committed to vcs
