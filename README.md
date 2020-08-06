@@ -24,6 +24,7 @@ east-1' is wrong; expecting 'us-west-2'
 - Provisioners only run when a resource is created/updated/destroyed. If there's nothing to change on the resource they don't run.
 - Remove spaces before policy json brackets to avoid errors
 - Function will return `null` if function is not async or doesn't use `callback`
+- Lamdas have to begin access to SQS queues via policies
 
 ### Best practices
 - `.tf` files should be committed to vcs
